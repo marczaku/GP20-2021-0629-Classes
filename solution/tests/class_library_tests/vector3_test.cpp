@@ -23,10 +23,12 @@ void EXPECT_VECTOR3_EQ(const Vector3& vector3, float x, float y, float z){
     EXPECT_FLOAT_EQ(z, vector3.z);
 }
 
+#ifdef REMOVE_THIS_WHEN_YOU_HAVE_IMPLEMENTED_THE_CONSTRUCTORS
 TEST_F(vector3_test, ConstructorShouldAssignPassedValues) {
     Vector3 vector3(2, 3, 5);
     EXPECT_VECTOR3_EQ(vector3, 2, 3, 5);
 }
+#endif
 
 #ifdef REMOVE_THIS_WHEN_YOU_HAVE_IMPLEMENTED_THE_PLUS_OPERATOR
 TEST_F(vector3_test, PlusOperatorReturnsSumOfPassedValues1) {
