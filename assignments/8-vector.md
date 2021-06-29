@@ -1,4 +1,4 @@
-## 56. C++ Vector2, Vector3 Class
+## 56. C++ Vector3 Class
 
 - Geometrical, 3D-Vectors
 - `vec + vec`, `vec – vec`
