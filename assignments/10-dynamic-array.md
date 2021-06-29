@@ -13,4 +13,6 @@
 - `InsertAfterElement(int iValue, int iIndex)`
 - `DeleteElement(int iIndex)`
 - `DeleteRange(int iFirst, int iLast)`
+
+Bonus:
 - `Sort()`
