@@ -3,16 +3,16 @@
 - Geometrical, 3D-Vectors
 - `vec + vec`, `vec – vec`
 - `vec * vec ` *(dot-product)*
-- `vec ^ vec` *(vector product)*
+- `vec ^ vec` *(cross-product)*
 - `vec * float`, `float * vec`
 - `vec == vec`
 - `vec != vec`
-- `vec` *(unary minus)*
+- `-vec` *(unary minus)*
 
-  - `+=`
-  - `-=`
-  - `*=`
-  - `^=`
+- `+=`
+- `-=`
+- `*=`
+- `^=`
 
 - `Normalize()`
 - `GetLength()`
