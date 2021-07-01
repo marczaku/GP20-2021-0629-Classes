@@ -3,11 +3,12 @@ file(GLOB SRCS *.cpp)
 ADD_EXECUTABLE(class_library_tests ${SRCS})
 
 TARGET_LINK_LIBRARIES(
-        class_library_tests
+    class_library_tests
     CLASS_LIBRARY
-    libgtest
-    libgmock
+    gtest_main
 )
+
+include(GoogleTest)
 
 add_test(NAME class_library_tests
          COMMAND class_library_tests)

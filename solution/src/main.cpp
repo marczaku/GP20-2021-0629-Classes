@@ -1,9 +1,22 @@
 #include <iostream>
-#include "vector3.hpp"
 
 using namespace std;
-using namespace class_library;
+
+class Foo{
+public:
+    char arr[10];
+    Foo(){
+        const char* hello = "Hello";
+        memcpy(arr, hello, sizeof(hello));
+    }
+    char& operator[](int index){
+        return arr[index];
+    }
+};
+
 int main(int argc, char *argv[])
 {
-    cout << "Put your project code here.";
+    Foo foo;
+    foo[0] = 'B';
+    cout << foo.arr; // print: Bello
 }
