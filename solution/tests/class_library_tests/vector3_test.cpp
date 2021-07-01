@@ -1,20 +1,11 @@
 #include <string>
-#include "vector3_test.hpp"
+#include "gtest/gtest.h"
+#include "vector3.hpp"
+
+#define ALL_TESTS
 
 using namespace class_library;
 using namespace std;
-
-vector3_test::vector3_test() {
-}
-
-vector3_test::~vector3_test() {
-};
-
-void vector3_test::SetUp() {
-};
-
-void vector3_test::TearDown() {
-}
 
 void EXPECT_VECTOR3_EQ(const Vector3& vector3, float x, float y, float z){
 
@@ -23,25 +14,25 @@ void EXPECT_VECTOR3_EQ(const Vector3& vector3, float x, float y, float z){
     EXPECT_FLOAT_EQ(z, vector3.z);
 }
 
-#ifdef REMOVE_THIS_WHEN_YOU_HAVE_IMPLEMENTED_THE_CONSTRUCTORS
-TEST_F(vector3_test, ConstructorShouldAssignPassedValues) {
+#if defined ALL_TESTS || REMOVE_THIS_WHEN_YOU_HAVE_IMPLEMENTED_THE_CONSTRUCTORS
+TEST(vector3, hello_this_is_a_test) {
     Vector3 vector3(2, 3, 5);
     EXPECT_VECTOR3_EQ(vector3, 2, 3, 5);
 }
 #endif
 
-#ifdef REMOVE_THIS_WHEN_YOU_HAVE_IMPLEMENTED_THE_PLUS_OPERATOR
-TEST_F(vector3_test, PlusOperatorReturnsSumOfPassedValues1) {
+#if defined ALL_TESTS || REMOVE_THIS_WHEN_YOU_HAVE_IMPLEMENTED_THE_PLUS_OPERATOR
+TEST(plus_operator, returns_the_sum_of_passed_values) {
     Vector3 a(1, 2, 3);
     Vector3 b(4, 5, 6);
     EXPECT_VECTOR3_EQ(a+b, 5, 7, 9);
 }
-TEST_F(vector3_test, PlusOperatorReturnsSumOfPassedValues2) {
+TEST(plus_operator, returns_the_sum_of_passed_values_2) {
     Vector3 a(1, -2, 3);
     Vector3 b(-4, 5, -6);
     EXPECT_VECTOR3_EQ(a+b, -3, 3, -3);
 }
-TEST_F(vector3_test, PlusOperatorDoesNotAffectAOrB) {
+TEST(plus_operator, does_not_affect_a_or_b) {
     Vector3 a(1, -2, 3);
     Vector3 b(-4, 5, -6);
     a+b;
@@ -50,18 +41,18 @@ TEST_F(vector3_test, PlusOperatorDoesNotAffectAOrB) {
 }
 #endif
 
-#ifdef REMOVE_THIS_WHEN_YOU_HAVE_IMPLEMENTED_THE_SUBTRACT_OPERATOR
-TEST_F(vector3_test, SubtractOperatorReturnsDifferenceOfPassedValues1) {
+#if defined ALL_TESTS || REMOVE_THIS_WHEN_YOU_HAVE_IMPLEMENTED_THE_SUBTRACT_OPERATOR
+TEST(vector3, SubtractOperatorReturnsDifferenceOfPassedValues1) {
     Vector3 a(1, 2, 3);
     Vector3 b(4, 5, 6);
     EXPECT_VECTOR3_EQ(a-b, -3, -3, -3);
 }
-TEST_F(vector3_test, SubtractOperatorReturnsDifferenceOfPassedValues2) {
+TEST(vector3, SubtractOperatorReturnsDifferenceOfPassedValues2) {
     Vector3 a(1, -2, 3);
     Vector3 b(-4, 5, -6);
     EXPECT_VECTOR3_EQ(a-b, 5, -7, 9);
 }
-TEST_F(vector3_test, SubtractOperatorDoesNotAffectAOrB) {
+TEST(vector3, SubtractOperatorDoesNotAffectAOrB) {
     Vector3 a(1, -2, 3);
     Vector3 b(-4, 5, -6);
     a-b;
@@ -70,18 +61,18 @@ TEST_F(vector3_test, SubtractOperatorDoesNotAffectAOrB) {
 }
 #endif
 
-#ifdef REMOVE_THIS_WHEN_YOU_HAVE_IMPLEMENTED_THE_DOT_OPERATOR
-TEST_F(vector3_test, MultiplyOperatorReturnsDotProductOfPassedValues1) {
+#if defined ALL_TESTS || REMOVE_THIS_WHEN_YOU_HAVE_IMPLEMENTED_THE_DOT_OPERATOR
+TEST(vector3, MultiplyOperatorReturnsDotProductOfPassedValues1) {
     Vector3 a(1, 2, 3);
     Vector3 b(4, 5, 6);
     EXPECT_FLOAT_EQ(a*b, 32);
 }
-TEST_F(vector3_test, MultiplyOperatorReturnsDotProductOfPassedValues2) {
+TEST(vector3, MultiplyOperatorReturnsDotProductOfPassedValues2) {
     Vector3 a(1, -2, 3);
     Vector3 b(-4, 5, -6);
     EXPECT_FLOAT_EQ(a*b, -32);
 }
-TEST_F(vector3_test, MultiplyOperatorDoesNotAffectAOrB) {
+TEST(vector3, MultiplyOperatorDoesNotAffectAOrB) {
     Vector3 a(1, -2, 3);
     Vector3 b(-4, 5, -6);
     a*b;
@@ -90,18 +81,18 @@ TEST_F(vector3_test, MultiplyOperatorDoesNotAffectAOrB) {
 }
 #endif
 
-#ifdef REMOVE_THIS_WHEN_YOU_HAVE_IMPLEMENTED_THE_CROSS_OPERATOR
-TEST_F(vector3_test, XorOperatorReturnsCrossProductOfPassedValues1) {
+#if defined ALL_TESTS || REMOVE_THIS_WHEN_YOU_HAVE_IMPLEMENTED_THE_CROSS_OPERATOR
+TEST(vector3, XorOperatorReturnsCrossProductOfPassedValues1) {
     Vector3 a(1, 2, 3);
     Vector3 b(4, 5, 6);
     EXPECT_VECTOR3_EQ(a^b, -3, 6, -3);
 }
-TEST_F(vector3_test, XorOperatorReturnsCrossProductOfPassedValues2) {
+TEST(vector3, XorOperatorReturnsCrossProductOfPassedValues2) {
     Vector3 a(1, -2, 3);
     Vector3 b(-4, 5, -6);
     EXPECT_VECTOR3_EQ(a^b, -3, -6, -3);
 }
-TEST_F(vector3_test, XorOperatorDoesNotAffectAOrB) {
+TEST(vector3, XorOperatorDoesNotAffectAOrB) {
     Vector3 a(1, -2, 3);
     Vector3 b(-4, 5, -6);
     a^b;

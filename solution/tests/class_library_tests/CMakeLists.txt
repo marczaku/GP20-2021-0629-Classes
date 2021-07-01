@@ -1,6 +1,7 @@
 file(GLOB SRCS *.cpp)
 
 ADD_EXECUTABLE(class_library_tests ${SRCS})
+enable_testing()
 
 TARGET_LINK_LIBRARIES(
     class_library_tests
@@ -10,5 +11,4 @@ TARGET_LINK_LIBRARIES(
 
 include(GoogleTest)
 
-add_test(NAME class_library_tests
-         COMMAND class_library_tests)
+gtest_discover_tests(class_library_tests)
